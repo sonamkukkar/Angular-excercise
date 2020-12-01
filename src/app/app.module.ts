@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { CustomComponent } from './custom/custom.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent
+    DialogComponent,
+    CustomComponent
   ],
   imports: [
     BrowserModule

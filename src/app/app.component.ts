@@ -14,9 +14,9 @@ export class AppComponent {
   isDialog3Opened: boolean = false;
 
   ngOnInit() {
-    this.modalTitle1 = 'Modal Box with text';
-    this.modalTitle2 = 'Model Box with form';
-    this.modalTitle3 = 'Model Box with custom component';
+    this.modalTitle1 = 'Dialog box with Text';
+    this.modalTitle2 = 'Dialog box with HTML Form';
+    this.modalTitle3 = 'Dialog box with Custom Component';
   }
   openDialog1() {
     this.isDialog1Opened = true;
