@@ -1,12 +1,59 @@
 <div class="content" role="main">
-  <button class="open-dialog-btn" (click)="openDialog()">
-    Open dialog box
+  <button class="open-dialog-btn" (click)="openDialog1()">
+    Open dialog box 1
+  </button>
+  <button class="open-dialog-btn" (click)="openDialog2()">
+    Open dialog box 2
+  </button>
+  <button class="open-dialog-btn" (click)="openDialog3()">
+    Open dialog box 3
   </button>
 </div>
-<div *ngIf="isDialogOpened" class="modal-dailog" role="dialog">
+<div *ngIf="isDialog1Opened" class="modal-dailog" role="dialog">
   <app-dialog
-    [modalTitle]="modalTitle"
-    [modalContent]="modalContent"
-    (onCloseButtonClick)="closeModalDialog($event)"
+    [modalTitle]="modalTitle1"
+    (onCloseButtonClick)="closeModalDialog1($event)"
+    >This is a modal dialog with text.</app-dialog
+  >
+</div>
+
+<div *ngIf="isDialog2Opened" class="modal-dailog" role="dialog">
+  <app-dialog
+    [modalTitle]="modalTitle2"
+    (onCloseButtonClick)="closeModalDialog2($event)"
+  >
+    <form>
+      <label for="fname">First Name</label>
+      <input
+        type="text"
+        id="fname"
+        name="firstname"
+        placeholder="Your name.."
+      />
+
+      <label for="lname">Last Name</label>
+      <input
+        type="text"
+        id="lname"
+        name="lastname"
+        placeholder="Your last name.."
+      />
+
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+
+      <input type="submit" value="Submit" (click)="closeModalDialog2()" />
+    </form>
+  </app-dialog>
+</div>
+
+<div *ngIf="isDialog3Opened" class="modal-dailog" role="dialog">
+  <app-dialog
+    [modalTitle]="modalTitle3"
+    (onCloseButtonClick)="closeModalDialog3($event)"
   ></app-dialog>
 </div>
