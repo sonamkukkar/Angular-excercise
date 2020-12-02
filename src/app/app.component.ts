@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  title: string = 'Dialog Boxes';
   modalTitle1!: string;
   modalTitle2!: string;
   modalTitle3!: string;

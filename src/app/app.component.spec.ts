@@ -1,31 +1,49 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it(`should have as title 'angular-exercise'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-exercise');
+  it('should create the app', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it(`should have as title 'Dialoge Boxes'`, () => {
+    const appTitle = 'Dialog Boxes';
+    expect(component.title).toEqual(appTitle);
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular-exercise app is running!');
+    expect(compiled.querySelector('.content h1').textContent).toContain(
+      'Dialog Boxes'
+    );
+  });
+
+  it('all modal dialogs should be hidden by default', () => {
+    expect(component.isDialog1Opened).not.toBeTruthy();
+    expect(component.isDialog2Opened).not.toBeTruthy();
+    expect(component.isDialog3Opened).not.toBeTruthy();
+  });
+
+  it('should open the modal dialog on Open Dialog button click', () => {
+    let buttonElement = fixture.debugElement.nativeElement.querySelector(
+      '#open-dialog-btn-1'
+    );
+    buttonElement.click();
+    expect(component.isDialog1Opened).toBeTruthy();
   });
 });

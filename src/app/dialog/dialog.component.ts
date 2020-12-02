@@ -6,8 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent implements OnInit {
-  @Input()
-  modalTitle!: string;
+  @Input() modalTitle!: string;
 
   @Output() onCloseButtonClick = new EventEmitter<boolean>();
 
