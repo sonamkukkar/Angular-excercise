@@ -23,7 +23,6 @@ describe('DialogComponent', () => {
   });
 
   it('should render title in h3 tag', () => {
-    const fixture = TestBed.createComponent(DialogComponent);
     const modalTitle = 'Dialog Box with text';
     fixture.nativeElement.querySelector('h3').textContent = modalTitle;
     fixture.detectChanges();
