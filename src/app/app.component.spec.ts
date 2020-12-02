@@ -1,5 +1,6 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -7,7 +8,7 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, DialogComponent],
     }).compileComponents();
   });
 
@@ -26,7 +27,7 @@ describe('AppComponent', () => {
     expect(component.title).toEqual(appTitle);
   });
 
-  it('should render title in h1 tag', () => {
+  it('should render the title in h1 tag', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content h1').textContent).toContain(
       component.title
@@ -34,9 +35,9 @@ describe('AppComponent', () => {
   });
 
   it('all modal dialogs should be hidden by default', () => {
-    expect(component.isDialog1Opened).not.toBeTruthy();
-    expect(component.isDialog2Opened).not.toBeTruthy();
-    expect(component.isDialog3Opened).not.toBeTruthy();
+    expect(component.isDialog1Opened).toBeFalsy();
+    expect(component.isDialog2Opened).toBeFalsy();
+    expect(component.isDialog3Opened).toBeFalsy();
   });
 
   it('should open the modal dialog with text as content on first button click (Open Dialog box 1 button)', () => {
@@ -61,5 +62,15 @@ describe('AppComponent', () => {
     );
     buttonElement.click();
     expect(component.isDialog3Opened).toBeTruthy();
+  });
+
+  it('should emit onCloseButtonClick event on clicking close icon on modal dialog', () => {
+    const dialog = new DialogComponent();
+    dialog.onCloseButtonClick.subscribe((openDialog: boolean) => {
+      expect(openDialog).toEqual(false);
+    });
+    expect(component.isDialog1Opened).toBeFalsy();
+    expect(component.isDialog2Opened).toBeFalsy();
+    expect(component.isDialog3Opened).toBeFalsy();
   });
 });
