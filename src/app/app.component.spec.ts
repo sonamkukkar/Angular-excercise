@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(component.title).toEqual(appTitle);
   });
 
-  it('should render title', () => {
+  it('should render title in h1 tag', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content h1').textContent).toContain(
-      'Dialog Boxes'
+      component.title
     );
   });
 
@@ -39,11 +39,27 @@ describe('AppComponent', () => {
     expect(component.isDialog3Opened).not.toBeTruthy();
   });
 
-  it('should open the modal dialog on Open Dialog button click', () => {
-    let buttonElement = fixture.debugElement.nativeElement.querySelector(
+  it('should open the modal dialog with text as content on first button click (Open Dialog box 1 button)', () => {
+    const buttonElement = fixture.debugElement.nativeElement.querySelector(
       '#open-dialog-btn-1'
     );
     buttonElement.click();
     expect(component.isDialog1Opened).toBeTruthy();
+  });
+
+  it('should open the modal dialog with form as content on second button click (Open Dialog box 2 button)', () => {
+    const buttonElement = fixture.debugElement.nativeElement.querySelector(
+      '#open-dialog-btn-2'
+    );
+    buttonElement.click();
+    expect(component.isDialog2Opened).toBeTruthy();
+  });
+
+  it('should open the modal dialog with custom component as content on third button (Open Dialog box 3 button)', () => {
+    const buttonElement = fixture.debugElement.nativeElement.querySelector(
+      '#open-dialog-btn-3'
+    );
+    buttonElement.click();
+    expect(component.isDialog3Opened).toBeTruthy();
   });
 });

@@ -22,11 +22,19 @@ describe('DialogComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render title in h3 tag', () => {
+  it('should render the modal title in h3 tag', () => {
     const modalTitle = 'Dialog Box with text';
     fixture.nativeElement.querySelector('h3').textContent = modalTitle;
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('h3').textContent).toContain(modalTitle);
+  });
+
+  it('should close the modal dialog on clicking close icon', () => {
+    const closeButton = fixture.debugElement.nativeElement.querySelector(
+      '.close'
+    );
+    closeButton.click();
+    expect(component.onCloseButtonClick).toBeDefined();
   });
 });
