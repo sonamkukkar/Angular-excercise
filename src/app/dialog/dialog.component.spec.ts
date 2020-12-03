@@ -28,12 +28,12 @@ describe('DialogComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render the modal title in h3 tag', () => {
+  it('should render the modal title in h2 tag', () => {
     const modalTitle = 'Dialog Box with text';
-    fixture.nativeElement.querySelector('h3').textContent = modalTitle;
+    fixture.nativeElement.querySelector('h2').textContent = modalTitle;
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h3').textContent).toContain(modalTitle);
+    expect(compiled.querySelector('h2').textContent).toContain(modalTitle);
   });
 
   it('should show ng content', () => {
