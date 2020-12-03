@@ -1,20 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss'],
 })
-export class DialogComponent implements OnInit {
+export class DialogComponent {
   @Input() modalTitle!: string;
 
   @Output() onCloseButtonClick = new EventEmitter<boolean>();
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  closeDialog() {
+closeDialog() {
     this.onCloseButtonClick.emit(false);
   }
 }

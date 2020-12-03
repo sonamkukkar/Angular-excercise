@@ -12,14 +12,14 @@
 </div>
 
 <!-- Dialog Component with text as Content-->
-<div *ngIf="isDialog1Opened" class="modal-dailog">
+<div *ngIf="isDialog1Opened" class="modal-dialog">
   <app-dialog [modalTitle]="modalTitle1" (onCloseButtonClick)="closeDialog1($event)">
     <span>This is a modal dialog with text.</span>
   </app-dialog>
 </div>
 
 <!-- Dialog Component with HTML Form as Content-->
-<div *ngIf="isDialog2Opened" class="modal-dailog">
+<div *ngIf="isDialog2Opened" class="modal-dialog">
   <app-dialog [modalTitle]="modalTitle2" (onCloseButtonClick)="closeDialog2($event)">
     <form>
       <label for="fname">First Name</label>
@@ -41,7 +41,7 @@
 </div>
 
 <!-- Dialog Component with Custom component as Content-->
-<div *ngIf="isDialog3Opened" class="modal-dailog">
+<div *ngIf="isDialog3Opened" class="modal-dialog">
   <app-dialog [modalTitle]="modalTitle3" (onCloseButtonClick)="closeDialog3($event)">
     <app-custom></app-custom>
   </app-dialog>
