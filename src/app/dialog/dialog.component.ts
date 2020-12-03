@@ -10,7 +10,7 @@ export class DialogComponent {
 
   @Output() onCloseButtonClick = new EventEmitter<boolean>();
 
-closeDialog() {
+closeDialog(): void {
     this.onCloseButtonClick.emit(false);
   }
 }

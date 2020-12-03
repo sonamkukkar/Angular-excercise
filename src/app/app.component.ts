@@ -24,28 +24,28 @@ export class AppComponent implements OnInit {
     this.isDialog3Opened = false;
   }
 
-  openDialog1() {
+  openDialog1(): void {
     this.isDialog1Opened = true;
     this.isDialog2Opened = false;
     this.isDialog3Opened = false;
   }
-  openDialog2() {
+  openDialog2(): void {
     this.isDialog1Opened = false;
     this.isDialog2Opened = true;
     this.isDialog3Opened = false;
   }
-  openDialog3() {
+  openDialog3(): void {
     this.isDialog1Opened = false;
     this.isDialog2Opened = false;
     this.isDialog3Opened = true;
   }
-  closeDialog1(value: boolean) {
+  closeDialog1(value: boolean): void {
     this.isDialog1Opened = value;
   }
-  closeDialog2(value: boolean = false) {
+  closeDialog2(value: boolean = false): void {
     this.isDialog2Opened = value;
   }
-  closeDialog3(value: boolean) {
+  closeDialog3(value: boolean): void {
     this.isDialog3Opened = value;
   }
 }
