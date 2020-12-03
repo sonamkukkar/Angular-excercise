@@ -1,12 +1,12 @@
-<div class="modal">
+<div class="modal" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
   <div class="modal-header">
-    <h2 class="modal-title">{{ modalTitle }}</h2>
-    <button class="close" aria-label="close" (click)="closeDialog()">
+    <h2 class="modal-title" id="dialog-title">{{ modalTitle }}</h2>
+    <button class="close" aria-label="close dialog" (click)="closeDialog()">
       <span aria-hidden="true">x</span>
     </button>
   </div>
 
-  <div class="modal-body">
+  <div class="modal-body" id="dialog-description">
     <ng-content></ng-content>
   </div>
 </div>

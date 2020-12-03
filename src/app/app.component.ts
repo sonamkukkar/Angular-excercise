@@ -7,18 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Dialog Boxes';
-  modalTitle1!: string;
-  modalTitle2!: string;
-  modalTitle3!: string;
+  modalTitle1: string = 'Dialog box with Text';
+  modalTitle2: string = 'Dialog box with HTML Form';
+  modalTitle3: string = 'Dialog box with Custom Component';
   isDialog1Opened: boolean = false;
   isDialog2Opened: boolean = false;
   isDialog3Opened: boolean = false;
 
-  ngOnInit() {
-    this.modalTitle1 = 'Dialog box with Text';
-    this.modalTitle2 = 'Dialog box with HTML Form';
-    this.modalTitle3 = 'Dialog box with Custom Component';
-  }
   openDialog1() {
     this.isDialog1Opened = true;
     this.isDialog2Opened = false;
