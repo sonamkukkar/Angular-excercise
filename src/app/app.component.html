@@ -1,56 +1,32 @@
 <div class="content" role="main">
   <h1>{{ title }}</h1>
-  <button
-    class="open-dialog-btn"
-    id="open-dialog-btn-1"
-    (click)="openDialog1()"
-  >
+  <button class="open-dialog-btn" id="open-dialog-btn-1" (click)="openDialog1()">
     Open dialog box 1
   </button>
-  <button
-    class="open-dialog-btn"
-    id="open-dialog-btn-2"
-    (click)="openDialog2()"
-  >
+  <button class="open-dialog-btn" id="open-dialog-btn-2" (click)="openDialog2()">
     Open dialog box 2
   </button>
-  <button
-    class="open-dialog-btn"
-    id="open-dialog-btn-3"
-    (click)="openDialog3()"
-  >
+  <button class="open-dialog-btn" id="open-dialog-btn-3" (click)="openDialog3()">
     Open dialog box 3
   </button>
 </div>
+
+<!-- Dialog Component with text as Content-->
 <div *ngIf="isDialog1Opened" class="modal-dailog" role="dialog">
-  <app-dialog
-    [modalTitle]="modalTitle1"
-    (onCloseButtonClick)="closeModalDialog1($event)"
-    >This is a modal dialog with text.</app-dialog
-  >
+  <app-dialog [modalTitle]="modalTitle1" (onCloseButtonClick)="closeModalDialog1($event)">
+    <span>This is a modal dialog with text.</span>
+  </app-dialog>
 </div>
 
+<!-- Dialog Component with HTML Form as Content-->
 <div *ngIf="isDialog2Opened" class="modal-dailog" role="dialog">
-  <app-dialog
-    [modalTitle]="modalTitle2"
-    (onCloseButtonClick)="closeModalDialog2($event)"
-  >
+  <app-dialog [modalTitle]="modalTitle2" (onCloseButtonClick)="closeModalDialog2($event)">
     <form>
       <label for="fname">First Name</label>
-      <input
-        type="text"
-        id="fname"
-        name="firstname"
-        placeholder="Your name.."
-      />
+      <input type="text" id="fname" name="firstname" placeholder="Your name.." />
 
       <label for="lname">Last Name</label>
-      <input
-        type="text"
-        id="lname"
-        name="lastname"
-        placeholder="Your last name.."
-      />
+      <input type="text" id="lname" name="lastname" placeholder="Your last name.." />
 
       <label for="country">Country</label>
       <select id="country" name="country">
@@ -64,10 +40,9 @@
   </app-dialog>
 </div>
 
+<!-- Dialog Component with Custom component as Content-->
 <div *ngIf="isDialog3Opened" class="modal-dailog" role="dialog">
-  <app-dialog
-    [modalTitle]="modalTitle3"
-    (onCloseButtonClick)="closeModalDialog3($event)"
-    ><app-custom></app-custom
-  ></app-dialog>
+  <app-dialog [modalTitle]="modalTitle3" (onCloseButtonClick)="closeModalDialog3($event)">
+    <app-custom></app-custom>
+  </app-dialog>
 </div>
