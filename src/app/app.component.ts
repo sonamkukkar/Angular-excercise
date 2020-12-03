@@ -29,13 +29,13 @@ export class AppComponent {
     this.isDialog2Opened = false;
     this.isDialog3Opened = true;
   }
-  closeModalDialog1(value: boolean) {
+  closeDialog1(value: boolean) {
     this.isDialog1Opened = value;
   }
-  closeModalDialog2(value: boolean = false) {
+  closeDialog2(value: boolean = false) {
     this.isDialog2Opened = value;
   }
-  closeModalDialog3(value: boolean) {
+  closeDialog3(value: boolean) {
     this.isDialog3Opened = value;
   }
 }
